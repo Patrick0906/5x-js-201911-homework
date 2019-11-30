@@ -25,10 +25,11 @@
         lottery() 若是未傳入參數則預設印出一組樂透數字。
     */
 
-    var lottery = function (count = 1){
+    var lottery = function (count){
+      count = count || 1;
+      var lotteryBall = [];
+      var number;      
       for( i = 0; i < count ; i++) {
-        var lotteryBall = [];
-        var number;
         while( lotteryBall.length < 6 ){
           number = parseInt( Math.random() * 49 + 1, 10 );
           if( lotteryBall.indexOf( number ) === -1 ){
@@ -36,7 +37,7 @@
           }
         }
         console.log(lotteryBall)
-     }
+      }
     }
 //lottery(20)
 
